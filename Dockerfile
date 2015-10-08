@@ -7,7 +7,7 @@ RUN curl http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
     apt-get install -y elasticsearch openjdk-7-jre-headless && \
     apt-get install -y nginx supervisor apache2-utils && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
     ./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
 
 ENV ELASTICSEARCH_USER **None**
