@@ -2,12 +2,13 @@ FROM tutum/curl:trusty
 MAINTAINER FENG, HONGLIN <hfeng@tutum.co>
 
 RUN curl http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add - && \
-    echo 'deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main' >> /etc/apt/sources.list && \
+    echo 'deb http://packages.elasticsearch.org/elasticsearch/2.x/debian stable main' >> /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install -y elasticsearch openjdk-7-jre-headless && \
+    apt-get install -y elasticsearch openjdk-8-jre-headless && \
     apt-get install -y nginx supervisor apache2-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+    ./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
 
 ENV ELASTICSEARCH_USER **None**
 ENV ELASTICSEARCH_PASS **None**
