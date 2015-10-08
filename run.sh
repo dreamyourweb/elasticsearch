@@ -10,7 +10,7 @@ if [ "${ELASTICSEARCH_USER}" == "**None**" ] && [ "${ELASTICSEARCH_PASS}" == "**
     echo "    curl localhost:9200"
     echo ""
     echo "========================================================================"
-    exec /usr/share/elasticsearch/bin/elasticsearch -Des.http.port=9201
+    exec /usr/share/elasticsearch/bin/elasticsearch -Des.http.port=9200
 else
     USER=${ELASTICSEARCH_USER:-admin}
     echo "=> Starting Elasticsearch with basic auth ..."
