@@ -8,7 +8,7 @@ RUN apt-get install -y elasticsearch openjdk-7-jre-headless
 RUN apt-get install -y nginx supervisor apache2-utils
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
-RUN ./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
+RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
 
 ENV ELASTICSEARCH_USER **None**
 ENV ELASTICSEARCH_PASS **None**
