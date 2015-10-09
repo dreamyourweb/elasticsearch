@@ -4,6 +4,7 @@ MAINTAINER Andres Lamont <andres@orikami.nl>
 RUN curl http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 RUN echo 'deb http://packages.elasticsearch.org/elasticsearch/2.0/debian stable main' >> /etc/apt/sources.list
 RUN apt-get update
+RUN apt-get install -y elasticsearch
 RUN apt-get install -y nginx supervisor apache2-utils
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
