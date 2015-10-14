@@ -26,6 +26,8 @@ RUN set -ex \
 		mkdir -p "$path"; \
 		chown -R elasticsearch:elasticsearch "$path"; \
 	done
+	
+VOLUME /usr/share/elasticsearch/data
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD run.sh /run.sh
