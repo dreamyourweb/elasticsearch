@@ -1,6 +1,8 @@
 FROM java:8-jre
 MAINTAINER Andres Lamont <andres@orikami.nl>
 
+ENV ELASTICSEARCH_MAJOR 2.0
+ENV ELASTICSEARCH_VERSION 2.0.2
 ENV ELASTICSEARCH_REPO_BASE http://packages.elasticsearch.org/elasticsearch/2.x/debian
 
 RUN curl http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
