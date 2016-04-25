@@ -9,6 +9,8 @@ RUN apt-get install -y nginx supervisor apache2-utils
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
+RUN /usr/share/elasticsearch/bin/plugin install snapshot
+RUN /usr/share/elasticsearch/bin/plugin install cloud-aws
 RUN /usr/share/elasticsearch/bin/plugin install analysis-icu
 
 ENV ELASTICSEARCH_USER **None**
